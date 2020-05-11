@@ -1,0 +1,10 @@
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\models\EmailServiceRequest.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\proxyConfiguration\EmailServiceProxy.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\NeNotificationServiceApplication.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\constants\NotificationTypes.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\service\EmailPusherService.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\subscribers\DesktopEventConsumer.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\models\EmailNotificationVO.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\models\SendEmailResp.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\subscriber\config\KafkaConsumerConfig.java
+E:\GO-CodeBase\GONotificationService\NotificationRoutingService\src\main\java\com\go\notification\subscribers\EmailEventConsumer.java
