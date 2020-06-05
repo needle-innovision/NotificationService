@@ -1,6 +1,8 @@
 package com.fms.notification.firebase;
 
+import com.fms.notification.exception.ApplicationError;
 import com.fms.notification.model.PushNotificationRequest;
+import com.fms.notification.model.PushNotificationSubscriptionRequest;
 import com.google.firebase.messaging.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
@@ -129,4 +132,19 @@ public class FCMService {
     }
 
 
+    public void subscribeToTopic(PushNotificationSubscriptionRequest pushRequest) throws FirebaseMessagingException {
+        TopicManagementResponse topicManagementResponse =
+                FirebaseMessaging.getInstance().subscribeToTopic(Arrays.asList(pushRequest.getDeviceToken()), pushRequest.getTopic());
+        if(Objects.isNull(topicManagementResponse) || topicManagementResponse.getSuccessCount() <= 0) {
+            throw new ApplicationError(String.format("Unable to subscribe to topic = %s", pushRequest.getTopic()));
+        }
+    }
+
+    public void unsubscribeFromTopic(PushNotificationSubscriptionRequest pushRequest) throws FirebaseMessagingException {
+        TopicManagementResponse topicManagementResponse =
+                FirebaseMessaging.getInstance().unsubscribeFromTopic(Arrays.asList(pushRequest.getDeviceToken()), pushRequest.getTopic());
+        if(Objects.isNull(topicManagementResponse) || topicManagementResponse.getSuccessCount() <= 0) {
+            throw new ApplicationError(String.format("Unable to unsubscribe from topic = %s", pushRequest.getTopic()));
+        }
+    }
 }

@@ -19,7 +19,7 @@ public class NotificationProducer {
     @Autowired
     private NotificationBroker notificationBroker;
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 600000)
+//    @Scheduled(initialDelay = 10000, fixedDelay = 600000)
     public void reload() {
         log.debug("Started loading notifications");
         try {

@@ -29,7 +29,7 @@ public class NotificationHandlerServiceImpl implements NotificationHandlerServic
         log.info("Processing notification: {}", notification);
         try {
             NotificationSenderResponse response = send(notification);
-            log.debug("Got response: {} for the notification: {}", response, notification);
+            log.debug("Got data: {} for the notification: {}", response, notification);
             Notification savedNotification = notificationDao.save(response.getNotificationModel());
             log.debug("Saved notification is: {}", savedNotification);
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class NotificationHandlerServiceImpl implements NotificationHandlerServic
                     notificationSenderFactory.getSevice(notification);
             response =
                     notificationSenderService.send(notification);
-            log.debug("Got response: {} for the notification: {}", response, notification);
+            log.debug("Got data: {} for the notification: {}", response, notification);
         } catch (Exception e) {
             log.error("Unable to send the given notification: {}", notification, e);
         }
